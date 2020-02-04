@@ -35,6 +35,7 @@ $(function(){
 
  $(document).ready(function() {
     $("#check").click(function() {
+        $("#checkSide").attr('checked', false);
         if ($(this).is(":checked")) {
             $('#btnSide').css({ 'margin-left': '100%', 'display': 'inline' });
         } else {
@@ -45,6 +46,7 @@ $(function(){
 
 $(window).bind('resize', function() {
     if ($("#check").is(":checked") && $(window).width() <= 968) {
+        $("#checkSide").attr('checked', false);
         $('#btnSide').css({ 'margin-left': '100%', 'display': 'none' });
     }
     if ($("#check").is(":checked") && $(window).width() <= 968) {
@@ -52,5 +54,12 @@ $(window).bind('resize', function() {
     }
     if ($(window).width() > 968) {
         $('#btnSide').css({ 'margin-left': '0px', 'display': 'inline' });
+    }
+
+    if ($(window).width() > 968 && $('.chat__name').is(':clicked')) {
+        $('.conversation').css({ 'display': 'block' });
+    }
+    else {
+        $('.conversation').css({ 'display': 'none' });
     }
 });

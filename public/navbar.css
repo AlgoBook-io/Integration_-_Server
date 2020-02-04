@@ -4,7 +4,7 @@ body{
 }
 
 nav{
-  position: fixed;
+    position: fixed;
     background: #0082e6;
     height: 50px;
     width: 100%;
@@ -20,12 +20,14 @@ nav label.logo{
 }
 
 nav ul{
+    z-index: 1000;
     list-style: none;
     float: right;
     margin-right: 20px;
 }
 
 nav ul li{
+    z-index: 1000;
     display: inline-block;
     line-height: 50px;
     margin: 0 5px;
@@ -75,7 +77,6 @@ nav .checkbtn{
       display: block;
     }
     nav ul{
-      z-index: 1;
       position: fixed;
       width: 100%;
       height: 100vh;
@@ -101,7 +102,4 @@ nav .checkbtn{
       left: 0;
     }
   }
-
-
-  
 

@@ -11,7 +11,13 @@ html{
   height: 100%;
   transition: transform 0.3s ease-in-out;
   overflow-x: hidden;
-  
+}
+
+#checking{
+  position: fixed;
+  bottom: 2vh;
+  right: 2vw;
+  display: none;
 }
 
 .cf:after {
@@ -39,11 +45,12 @@ html{
   font-weight: 600;
 }
 
-.chat_button {
+#chat_button {
   position: fixed;
   bottom: 2vh;
   right: 2vw;
   font-family: "Lato";
+  font-style: normal;
   -webkit-appearance: none;
   font-size: 1rem;
   line-height: 1.2;
@@ -61,13 +68,14 @@ html{
   padding: 10px 16px;
   padding-left: 30px;
   outline: 0;
+  transition: all .5s ease;
 }
 
 
 /*before selector is used to insert something before the selected element.
 Here green dot has been inserted*/
 
-.chat_button:before {
+#chat_button:before {
   position: absolute;
   top: 0;
   left: 10px;
@@ -79,10 +87,10 @@ Here green dot has been inserted*/
   content: "";
   border-radius: 100px;
 }
-.chat_button:hover {
+#chat_button:hover {
   background: #4d4d50;
 }
-.chat_button:active {
+#chat_button:active {
   bottom: 1.5vh;
 }
 /*changed chat from absolute to fixed;and top:0px removed*/
@@ -91,8 +99,9 @@ Here green dot has been inserted*/
   background: #28282B;
   right: -300px;
   height: 100vh;
+  top: 50px;
   width: 300px;
- 
+  transition: all .5s ease;
 }
 
 .chat__human {
@@ -136,23 +145,22 @@ Here green dot has been inserted*/
   display: none;
   position: fixed;
   bottom: 0;
-  right: 200px;
+  right: 500px;
   width: 40vw;
   height: 40vh;
   background: black;
 }
 
 /*Hiding chat box for mobile view*/
-@media only screen and (max-width: 767px){
-    .chat_button,.chat,.conversation{
+@media only screen and (max-width: 985px){
+    #chat_button,.chat{
       display: none;
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 968px) {
   .conversation{
-    width: 50vw;
-    height: 50vh;
+    display: none;
   }
 }
 
@@ -206,4 +214,14 @@ Here green dot has been inserted*/
   float: right;
   font-size: 20px;
   margin-top: -4px;
+}
+
+#checking:checked ~ .chat{
+  transition: all 0.3s ease-in-out;
+  transform: translate3d(-300px, 0, 0);
+}
+
+#checking:checked ~ label #chat_button{
+  transition: all 0.3s ease-in-out;
+  transform: translate3d(-300px, 0, 0);
 }
